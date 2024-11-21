@@ -1,1 +1,26 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: blue;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#excusa {
+  font-size: 30px;
+  margin: 20px;
+  color: red;
+}
+h1,
+h2 {
+  margin: 20px;
+  color: black;
+}
+#botonExcusa {
+  font-size: 20px;
+  color: white;
+  background-color: rgb(8, 8, 95);
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+}
