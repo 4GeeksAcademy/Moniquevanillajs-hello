@@ -1,7 +1,5 @@
 /* eslint-disable */
-
 import "./style.css";
-
 window.onload = function() {
   let Quien = ["Mi perro", "Mi madre", "El vecino", "Mi hijo", "Mi professor"];
   let Accion = ["comio", "perdio", "robo", "rompio", "arreglo"];
@@ -22,8 +20,11 @@ window.onload = function() {
     return `${personajes} ${verbos} ${objeto} ${tiempo}.`;
   }
 
-  document.getElementById("excusa").innerText = generarExcusa();
+  //mostra la excusa al cargar la pagina
+  document.getElementById("excusa").innerHTML = generarExcusa();
+
+  //al hacer click en el boton actualiza la pagina y cambia la frase
+  document.getElementById("botonExcusa").addEventListener("click", function() {
+    document.getElementById("excusa").innerHTML = generarExcusa();
+  });
 };
-document.getElementById("botonExcusa").addEventListener("click", function() {
-  location.reload();
-});
