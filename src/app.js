@@ -1,29 +1,32 @@
 /* eslint-disable */
 import "./style.css";
 window.onload = function() {
-  let Quien = ["Mi perro", "Mi madre", "El vecino", "Mi hijo", "Mi professor"];
-  let Accion = ["comio", "perdio", "robo", "rompio", "arreglo"];
-  let Que = ["mi trabajo", "mi telefone", "mis llaves", "mi coche"];
-  let Quando = [
+  let sujetos = ["Mi perro", "Mi madre", "El vecino", "Mi profesor"];
+  let acciones = ["comió", "perdió", "robó", "rompió", "arregló"];
+  let objetos = ["mi trabajo", "mi teléfono", "mis llaves", "mi coche"];
+  let tiempos = [
     "ayer",
-    "despues del trabajo",
+    "después del trabajo",
     "hoy por la mañana",
     "en la cena"
   ];
 
+  function obtenerElementoAleatorio(lista) {
+    return lista[Math.floor(Math.random() * lista.length)];
+  }
   function generarExcusa() {
-    let personajes = Quien[Math.floor(Math.random() * Quien.length)];
-    let verbos = Accion[Math.floor(Math.random() * Accion.length)];
-    let objeto = Que[Math.floor(Math.random() * Que.length)];
-    let tiempo = Quando[Math.floor(Math.random() * Quando.length)];
+    let sujetoAleatorio = obtenerElementoAleatorio(sujetos);
+    let accionAleatorio = obtenerElementoAleatorio(acciones);
+    let objetoAleatorio = obtenerElementoAleatorio(objetos);
+    let tiempoAleatorio = obtenerElementoAleatorio(tiempos);
 
-    return `${personajes} ${verbos} ${objeto} ${tiempo}.`;
+    return `${sujetoAleatorio} ${accionAleatorio} ${objetoAleatorio} ${tiempoAleatorio}.`;
   }
 
   //mostra la excusa al cargar la pagina
   document.getElementById("excusa").innerHTML = generarExcusa();
 
-  //al hacer click en el boton actualiza la pagina y cambia la frase
+  //al hacer click en el boton cambia la frase
   document.getElementById("botonExcusa").addEventListener("click", function() {
     document.getElementById("excusa").innerHTML = generarExcusa();
   });
